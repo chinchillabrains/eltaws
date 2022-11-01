@@ -27,7 +27,8 @@ class Client{
     public function getStoreByZip( string $zip ): array
     {
         $service = 'PELTT01.wsdl';
-        return $this->sendRequest( $service, $zip );
+        $reqData = ['web_tk' => $zip];
+        return $this->sendRequest( $service, $reqData );
     }
 
     private function sendRequest( string $service, array $requestData )
