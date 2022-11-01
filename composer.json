@@ -10,20 +10,17 @@
         }
     ],
     "type": "project",
-    "require": {
-		"php": ">=7.1"
-    },
-    "require-dev": {
-		"phpunit/phpunit": "6.*"
-    },
     "autoload": {
         "psr-4": {
-            "Chinchillabrains\\Eltaws": "src/"
+            "Chinchillabrains\\Eltaws\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Chinchillabrains\\Eltaws\\Tests\\": "tests/"
         }
-    }	
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
 }
