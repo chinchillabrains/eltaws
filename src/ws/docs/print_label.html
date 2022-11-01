@@ -1,0 +1,132 @@
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td colspan="4"><strong><br><br>Εκτύπωση αυτοκόλλητου ΣΥΔΕΤΑ - Label ( γίνεται κλίση του WS και επιστρέφεται pdf (σε μορφή base64))<br><br></strong></td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="color: green"><strong><strong>ΜΕΘΟΔΟΣ</strong></td>
+</tr>
+<tr>
+<td  style="color: red"><strong>ΟΝΟΜΑ ΜΕΘΟΔΟΥ</strong></td>
+<td style="color: red"><strong>ΠΕΡΙΓΡΑΦΗ</td>
+</tr>
+<tr>
+<td>READ</td>
+<td>Το WS <a href="WS\PELB64VG.wsdl" download >PELB64VG.wsdl </a>  επιστρέφει pdf  (σε μορφή base64) για την ετύπωση του label</td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="color: green"><strong>INPUT FIELDS</strong></td>
+</tr>
+<tr>
+<td style="width: 15%; color: red"><strong>ΠΕΔΙΟ</strong></td>
+<td style="width: 15%; color: red"><strong>ΤΥΠΟΣ</strong></td>
+<td style="width: 50%; color: red"><strong>ΠΕΡΙΓΡΑΦΗ</strong></td>
+<td style="width: 20%; color: red"><strong>ΑΠΑΙΤΗΣΗ</strong></td>
+</tr>
+<tr>
+<td><strong> PEL_CODE</strong></td>
+<td>Από ΕΛΤΑ Courier</td>
+<td>Κωδικός Αποστολέα (ολόκληρο - master + 6 κενα+ child - π.χ. 010101      0005)  (Υποχρεωτικό πεδίο)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong> WPEL_USER</strong></td>
+<td>Από ΕΛΤΑ Courier</td>
+<td>Κεφαλικός Κωδικός Χρήστη (Υποχρεωτικό πεδίο)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>WPEL_PASS</strong></td>
+<td>Από ΕΛΤΑ Courier</td>
+<td>Κωδικός Ασφαλείας (Υποχρεωτικό πεδίο)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>WPEL_VG</strong></td>
+<td>String 13 digit</td>
+<td>Αριθμός Αποστολής (Υποχρεωτικό πεδίο)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>PAPER_SIZE</strong></td>
+<td>String</td>
+<td>0 = Label A4 <br>1 = Label A6 <br>Default Value 1</td>
+<td>Αυστηρά μία από τις δύο τιμές.</td>
+</tr>
+<tr>
+<td colspan="2"><strong><br>Clarification: Αν είναι επιθυμητό, το ΣΥΔΕΤΑ να εκτυπωθεί σε <br>
+1. Α4 τότε το paper_size=0 <br>
+2. Α6 τότε το paper_size=1<br></strong></td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="color: green"><strong><strong><br>OUTPUT FIELDS<br></strong></td>
+</tr>
+<tr>
+<td style="width: 15%; color: red"><strong>ΠΕΔΙΟ</strong></td>
+<td style="width: 15%; color: red"><strong>ΤΥΠΟΣ</strong></td>
+<td style="width: 50%; color: red"><strong>ΠΕΡΙΓΡΑΦΗ</strong></td>
+</tr>
+<tr>
+<td><strong>ST-FLAG</strong></td>
+<td> Int</td>
+<td>0 = Επιτυχής Εισαγωγή <br>1 έως 99 Error codes<br>Default Value 1</td>
+</tr>
+<tr>
+<td><strong>ST-TITLE</strong></td>
+<td> String</td>
+<td>Περιγραφή Λάθους αν ST-FLAG > 0</td>
+</tr>
+<tr>
+<td><strong>Β64_STRING</strong></td>
+<td> String</td>
+<td>BASE 64 string αν ST-FLAG = 0</td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 30%;"><strong>Clarification:    Παράδειγμα μετατροπής BASE 64 σε PDF (κώδικας σε c#)</strong></td>
+<td style="width: 70%;"><strong>string  file_name = @"c:\"+ VG_CODE + ".pdf"; <br>
+Byte[] bytes_2 = Convert.FromBase64String(Β64_STRING);<br>
+File.WriteAllBytes(file_name, bytes_2);</strong></td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td><br><br><br><strong><font color="red">Μορφή Αυτοκόλλητου ΣΥ.ΔΕ.ΤΑ (Α6) το οποίο επιστρέφει κατά την κλήση του Web Service  (<a href="WS\PELB64VG.wsdl" download >PELB64VG.wsdl </a>) όταν οριστεί το PAPER_SIZE = 1 </font></strong></td>
+<td><br><br><br><strong><font color="red">Μορφή Αυτοκόλλητου ΣΥ.ΔΕ.ΤΑ (Α4) το οποίο επιστρέφει κατά την κλήση του Web Service (<a href="WS\PELB64VG.wsdl" download >PELB64VG.wsdl </a>) όταν οριστεί το PAPER_SIZE = 0 </font></font></strong></td>
+</tr>
+<tr>
+<td><img  src="Image\label_A6.jpg" alt="Label A6" align="bottom" > </td>
+<td><img  width="50%" height="50%" src="Image\label_A4.jpg" alt="Label A4" align="middle" > </td>
+</tr>
+<tr>
+
+</tr>
+<tr>
+
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,287 @@
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="color: green"><strong><strong>ΜΕΘΟΔΟΣ</strong></td>
+</tr>
+<tr>
+<td  style="color: red"><strong>ΟΝΟΜΑ ΜΕΘΟΔΟΥ</strong></td>
+<td style="color: red"><strong>ΠΕΡΙΓΡΑΦΗ</td>
+</tr>
+<tr>
+<td>READ</td>
+<td>Το WS <a href="WS\CREATEAWB.WSDL" download >CREATEAWB.WSDL</a>:<br> 
+Παράγει ένα flag επιτυχίας και ένα ΣΥ.ΔΕ.ΤΑ. αν είναι απλή αποστολή.<br>
+Παράγει ένα flag επιτυχίας και δύο ΣΥ.ΔΕ.ΤΑ. αν έχει Ειδική Διαχείριση ή Αντικαταβολή με επιταγή(-ες).<br>
+Παράγει ένα flag επιτυχίας και τρία ΣΥ.ΔΕ.ΤΑ αν έχει και Ειδική Διαχείριση και Αντικαταβολή με επιταγή(-ες).</td>
+</tr>
+
+</tbody>
+</table>
+<br><br><br>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="color: green"><strong>INPUT FIELDS</strong></td>
+</tr>
+<tr>
+<td style="width: 15%; color: red"><strong>ΠΕΔΙΟ</strong></td>
+<td style="width: 15%; color: red"><strong>ΤΥΠΟΣ</strong></td>
+<td style="width: 50%; color: red"><strong>ΠΕΡΙΓΡΑΦΗ</strong></td>
+<td style="width: 20%; color: red"><strong>ΑΠΑΙΤΗΣΗ</strong></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-USER-CODE</strong></td>
+<td style="width: 15%;">Από ΕΛΤΑ Courier </td>
+<td style="width: 50%;">Κωδικός Χρήστη (Υποχρεωτικό πεδίο)</td>
+<td style="width: 20%;">Απαραιτήτως 7-ψήφιος</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-USER-PASS</strong></td>
+<td style="width: 15%;"> </td>
+<td style="width: 50%;">Κωδικός Ασφαλείας (Υποχρεωτικό πεδίο)</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-APOST-CODE</strong></td>
+<td style="width: 15%;"></td>
+<td style="width: 50%;"> Κεφαλικός κωδικός Αποστολέα (Υποχρεωτικό πεδίο) </td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-APOST-SUB-CODE</strong></td>
+<td style="width: 15%;"></td>
+<td style="width: 50%;"> Υπο-κωδικός Αποστολέα </td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-USER-LANG</strong></td>
+<td style="width: 15%;"></td>
+<td style="width: 50%;"> Γλώσσα Επιστροφής Μηνυμάτων (προς το παρόν το αφήνετε μη συμπληρωμένο) </td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-PARAL-NAME</strong></td>
+<td style="width: 15%;">Char max 150 digit </td>
+<td style="width: 50%;">Επωνυμία Παραλήπτη (Υποχρεωτικό πεδίο)</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-PARALADDRESS</strong></td>
+<td style="width: 15%;">Char max 150 digit </td>
+<td style="width: 50%;">Διεύθυνση Παραλήπτη (Υποχρεωτικό πεδίο)</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-PARAL-AREA</strong></td>
+<td style="width: 15%;">Char max 40 digit </td>
+<td style="width: 50%;">Περιοχή Παραλήπτη</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-PARAL-TK</strong></td>
+<td style="width: 15%;">Char 5 digit </td>
+<td style="width: 50%;">Τ.Κ. Παραλήπτη (Υποχρεωτικό πεδίο)</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-PARAL-THL-1</strong></td>
+<td style="width: 15%;">Char 10 digit </td>
+<td style="width: 50%;">Σταθερό Τηλέφωνο Παραλήπτη</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-PARAL-THL-2</strong></td>
+<td style="width: 15%;">Char 10 digit </td>
+<td style="width: 50%;">Κινητό Τηλέφωνο Παραλήπτη (πρέπει να υπάρχει τουλάχιστον ένα τηλέφωνο)</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-SERVICE</strong></td>
+<td style="width: 15%;">Char 1 digit</td>
+<td style="width: 50%;">1 = Παράδοση στον Παραλήπτη <br>2 = Παραλαβή από Θυρίδα<br>default value 1</td>
+<td style="width: 20%;">Αυστηρά μία από τις δύο τιμές.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-BAROS</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Βάρος Αποστολής (999999.999) (π.χ. 000012.123)</td>
+<td style="width: 20%;">Αυστηρά με τελεία θα πρέπει να χωρίζονται τα δεκαδικά ψηφία.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-TEMAXIA</strong></td>
+<td style="width: 15%;">Char 3 digit</td>
+<td style="width: 50%;">Τεμάχια Αποστολής (999) max 150</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-PARAL-SXOLIA</strong></td>
+<td style="width: 15%;">Char max 100 digit</td>
+<td style="width: 50%;">Σχόλια</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-SUR-1</strong></td>
+<td style="width: 15%;">Char 1 digit</td>
+<td style="width: 50%;">ΕΙΔΙΚΗ ΔΙΑΧΕΙΡΙΣΗ (default value 0) <br>0 = Όχι <br> 1 = Ναι</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-SUR-2</strong></td>
+<td style="width: 15%;">Char 1 digit</td>
+<td style="width: 50%;">ΠΡΟΚΑΘΟΡΙΣΜΕΝΗ ΩΡΑ (default value 0)<br>0 = Όχι <br> 1 = Ναι</td>
+<td style="width: 20%;"></td>
+</tr><tr>
+<td style="width: 15%;"><strong>PEL-SUR-3</strong></td>
+<td style="width: 15%;">Char 1 digit</td>
+<td style="width: 50%;">ΕΠΙΔΟΣΗ ΣΑΒΒΑΤΟΥ (default value 0) <br> 0 = Όχι <br> 1 = Ναι</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-ANT-POSO</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Αντικαταβολή Μετρητά (9999999.99) (π.χ. 0000123.12) <br> Επιτρέπεται Μόνο Μετρητά ή Μόνο Επιταγή/ες</td>
+<td style="width: 20%;">Αυστηρά με τελεία θα πρέπει να χωρίζονται τα δεκαδικά ψηφία.</td>
+</tr><tr>
+<td style="width: 15%;"><strong>PEL-ANT-POSO1</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Αντικαταβολή επιταγή (9999999.99) (π.χ.0000123.12) Επιτρέπεται Μόνο Μετρητά ή Μόνο Επιταγή/ες</td>
+<td style="width: 20%;">Αυστηρά με τελεία θα πρέπει να χωρίζονται τα δεκαδικά ψηφία.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-ANT-POSO2</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Αντικαταβολή επιταγή (9999999.99) (π.χ.0000123.12) Επιτρέπεται Μόνο Μετρητά ή Μόνο Επιταγή/ες</td>
+<td style="width: 20%;">Αυστηρά με τελεία θα πρέπει να χωρίζονται τα δεκαδικά ψηφία.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-ANT-POSO3</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Αντικαταβολή επιταγή (9999999.99) (π.χ.0000123.12) Επιτρέπεται Μόνο Μετρητά ή Μόνο Επιταγή/ες</td>
+<td style="width: 20%;">Αυστηρά με τελεία θα πρέπει να χωρίζονται τα δεκαδικά ψηφία.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-ANT-POSO4</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Αντικαταβολή επιταγή (9999999.99) (π.χ.0000123.12) Επιτρέπεται Μόνο Μετρητά ή Μόνο Επιταγή/ες</td>
+<td style="width: 20%;">Αυστηρά με τελεία θα πρέπει να χωρίζονται τα δεκαδικά ψηφία.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-ANT-DATE1</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Ημερομηνία Λήξης 1ης Επιταγής - PEL-ANT-POSO1 (ηη/μμ/εεεε) (π.χ. 30/12/2014) Ελέγχεται μόνο αν PEL-ANT-POSO1 > 0</td>
+<td style="width: 20%;">Αυστηρά σε format HH/MM/EEEE.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-ANT-DATE2</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Ημερομηνία Λήξης 1ης Επιταγής - PEL-ANT-POSO1 (ηη/μμ/εεεε) (π.χ. 30/12/2014) Ελέγχεται μόνο αν PEL-ANT-POSO2 > 0</td>
+<td style="width: 20%;">Αυστηρά σε format HH/MM/EEEE.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-ANT-DATE3</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Ημερομηνία Λήξης 1ης Επιταγής - PEL-ANT-POSO1 (ηη/μμ/εεεε) (π.χ. 30/12/2014) Ελέγχεται μόνο αν PEL-ANT-POSO3 > 0</td>
+<td style="width: 20%;">Αυστηρά σε format HH/MM/EEEE.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-ANT-DATE4</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 50%;">Ημερομηνία Λήξης 1ης Επιταγής - PEL-ANT-POSO1 (ηη/μμ/εεεε) (π.χ. 30/12/2014) Ελέγχεται μόνο αν PEL-ANT-POSO4 > 0</td>
+<td style="width: 20%;">Αυστηρά σε format HH/MM/EEEE.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-ASF-POSO</strong></td>
+<td style="width: 15%;">Char 10 digit</td>
+<td style="width: 65.91%;"Ασφάλιση Αποστολής (9999999.99) (π.χ. 0000123.12) (9999999.99) Αυστηρά με τελεία θα πρέπει να χωρίζονται τα δεκαδικά ψηφία.</td>
+<td style="width: 20%;">Αυστηρά με τελεία θα πρέπει να χωρίζονται τα δεκαδικά ψηφία.</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>PEL-REF-NO</strong></td>
+<td style="width: 15%;">Char max 30 digit</td>
+<td style="width: 50%;">Αριθμός μοναδικοποίησης</td>
+<td style="width: 20%;">Αλφαριθμητικό πεδίο έως 30 χαρακτήρες</td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="color: green"><strong>OUTPUT FIELDS</strong></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>T-FLAG</strong></td>
+<td style="width: 15%;">int</td>
+<td style="width: 50%;">0 = Επιτυχής Εισαγωγή <br> 1 έως 99 Error codes</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>ST-TITLE</strong></td>
+<td style="width: 15%;">string</td>
+<td style="width: 50%;">Περιγραφή Λάθους αν ST-FLAG > 0</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>VG-CODE</strong></td>
+<td style="width: 15%;">string 13 digit</td>
+<td style="width: 50%;">Αριθμός Αποστολής αν ST-FLAG = 0</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>RETURN_VG</strong></td>
+<td style="width: 15%;">string 13 digit</td>
+<td style="width: 50%;">Αριθμός Retour Αποστολής αν PEL-SUR-1 και STFLAG = 0</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>EPITAGH_VG</strong></td>
+<td style="width: 15%;">string 13 digit</td>
+<td style="width: 50%;">Αριθμό Αποστολής Επιστροφικού Αξιογράφου αν PEL-SUR-1 και ST-FLAG = 0</td>
+<td style="width: 20%;"></td>
+</tbody>
+</table>
+<br><br><br>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+</tr>
+<tr>
+<td style = "color:green"><strong>ΛΕΚΤΙΚΑ ERRORS ΠΟΥ ΑΝΤΙΣΤΟΙΧΟΥΝ ΣΤΑ st_flag!=0</strong></td>
+</tr>
+<tr>
+<td style="width: 15%; color:red"><strong>st_flag</strong></td>
+<td style="color:red"><strong>ΛΕΚΤΙΚΟ ERROR</strong></td>
+</tr>
+<tr>
+<td style="width: 15%;">1</td>
+<td>Λάθος Τ.Κ.</td>
+</tr>
+<tr>
+<td style="width: 15%;">2</td>
+<td>Λάθος Κωδικός Χρήστη</td>
+</tr>
+<tr>
+<td style="width: 15%;">3</td>
+<td>Λάθος Κωδικός Ασφαλείας</td>
+</tr>
+<tr>
+<td style="width: 15%;">5</td>
+<td>Δεν έχει Οριστεί Βάρος</td>
+</tr>
+<tr>
+<td style="width: 15%;">5</td>
+<td>Δεν έχουν Οριστεί Τεμάχια</td>
+</tr>
+<tr>
+<td style="width: 15%;">6</td>
+<td>Λάθος Κωδικός Πελάτη</td>
+</tr>
+<tr>
+<td style="width: 15%;">7</td>
+<td>Λάθος Τηλέφωνο</td>
+</tr>
+<tr>
+<td style="width: 15%;">7</td>
+<td>Πρέπει Να Υπάρχει Τουλάχιστον 1 Τηλέφωνο</td>
+</tr>
+</tbody>
+</table>

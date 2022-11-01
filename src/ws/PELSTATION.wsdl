@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<definitions name="PELSTATION" targetNamespace="/PELSTATION" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="/PELSTATION" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Micro Focus NetExpress generated WSDL document-->
+    <types>
+      <schema elementFormDefault="qualified" targetNamespace="/PELSTATION" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="/PELSTATION">
+        <element name="READ">
+          <complexType>
+            <sequence>
+              <element name="web_tk" type="string"/>
+            </sequence>
+          </complexType>
+        </element>
+        <element name="READResponse">
+          <complexType>
+            <sequence>
+              <element name="web_code" type="string"/>
+              <element name="web_company" type="string"/>
+              <element name="web_title" type="string"/>
+              <element name="web_address" type="string"/>
+              <element name="web_area" type="string"/>
+              <element name="web_wrario" type="string"/>
+              <element name="web_tel1" type="string"/>
+              <element name="web_fax" type="string"/>
+              <element name="web_x" type="string"/>
+              <element name="web_y" type="string"/>
+              <element name="st_flag" type="integer"/>
+              <element name="st_title" type="string"/>
+            </sequence>
+          </complexType>
+        </element>
+      </schema>
+    </types>
+    <message name="READInput">
+      <part element="tns:READ" name="parameters"/>
+    </message>
+    <message name="READOutput">
+      <part element="tns:READResponse" name="parameters"/>
+    </message>
+    <portType name="PELSTATION">
+      <operation name="READ">
+        <input message="tns:READInput"/>
+        <output message="tns:READOutput"/>
+      </operation>
+    </portType>
+    <binding name="PELSTATION" type="tns:PELSTATION">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="READ">
+        <soap:operation soapAction=""/>
+        <input>
+          <soap:body use="literal"/>
+        </input>
+        <output>
+          <soap:body use="literal"/>
+        </output>
+      </operation>
+    </binding>
+    <service name="PELSTATION">
+      <port binding="tns:PELSTATION" name="PELSTATION">
+        <documentation>
+          <wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.0"/>
+        </documentation>
+        <soap:address location="http://212.205.47.226:9003"/>
+      </port>
+    </service>
+  </definitions>

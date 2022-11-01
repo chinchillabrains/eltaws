@@ -1,0 +1,178 @@
+
+
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td colspan="4"><strong><br><br>Παρακολούθηση ιστορικού του αντικειμένου - Tracing<br><br></strong></td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="color: green"><strong><strong>ΜΕΘΟΔΟΣ</strong></td>
+</tr>
+<tr>
+<td  style="color: red"><strong>ΟΝΟΜΑ ΜΕΘΟΔΟΥ</strong></td>
+<td style="color: red"><strong>ΠΕΡΙΓΡΑΦΗ</td>
+</tr>
+<tr>
+<td>READ</td>
+<td>Το WS <a href="WS\PELTT01.WSDL" download >PELTT01.WSDL </a>Επιστρέφει το ιστορικό του αντικειμένου</td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style ="color: green"><strong>INPUT FIELDS</strong></td>
+</tr>
+<tr>
+<td style="width: 15%; color: red"><strong>ΠΕΔΙΟ</strong></td>
+<td style="width: 15%; color: red"><strong>ΤΥΠΟΣ</strong></td>
+<td style="width: 50%; color: red"><strong>ΠΕΡΙΓΡΑΦΗ</strong></td>
+<td style="width: 20%; color: red"><strong>ΑΠΑΙΤΗΣΗ</strong></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WPEL_CODE</strong></td>
+<td style="width: 15%;">Από ΕΛΤΑ Courier </td>
+<td style="width: 50%;">Κεφαλικός Κωδικός Αποστολέα (Υποχρεωτικό πεδίο) (έστω δίνεται κωδικός αποστολέα π.χ. 010101      0005 τότε WPEL_CODE= 010101, έστω δίνεται κωδικός αποστολέα π.χ. 123456 τότε WPEL_CODE= 123456  )</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WPEL_USER</strong></td>
+<td style="width: 15%;">Από ΕΛΤΑ Courier </td>
+<td style="width: 50%;">Κωδικός Χρήστη (Υποχρεωτικό πεδίο)</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WPEL_PASS</strong></td>
+<td style="width: 15%;">Από ΕΛΤΑ Courier </td>
+<td style="width: 50%;">Κωδικός Ασφαλείας (Υποχρεωτικό πεδίο)</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WPEL_VG</strong></td>
+<td style="width: 15%;">String 13 digit</td>
+<td style="width: 50%;">Αριθμός Αποστολής</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WPEL_REF</strong></td>
+<td style="width: 15%;">Char max 30 digit </td>
+<td style="width: 50%;">Αλφαριθμητικό πεδίο έως 30 χαρακτήρες</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WPEL_FLAG</strong></td>
+<td style="width: 15%;">Char 1 digit</td>
+<td style="width: 50%;">1 = Αναζήτηση με Αριθμό Αποστολής <br>2 = Αναζήτηση με Reference_No <br> default value 1</td>
+<td style="width: 20%;">Αυστηρά μία από τις δύο τιμές <br> Clarification: Αν η αναζήτηση γίνει με το ΣΥ.ΔΕ.ΤΑ. θα πρέπει το wpel_flag να είναι 1, <br>
+αντίστοιχα αν η αναζήτηση γίνει με το Reference Number θα πρέπει το wpel_flag να είναι 2</td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style ="color: green"><strong>OUTPUT FIELDS</strong></td>
+</tr>
+<tr>
+<td style="width: 15%; color: red"><strong>ΠΕΔΙΟ</strong></td>
+<td style="width: 15%; color: red"><strong>ΤΥΠΟΣ</strong></td>
+<td style="width: 50%; color: red"><strong>ΠΕΡΙΓΡΑΦΗ</strong></td>
+<td style="width: 20%; color: red"><strong>ΑΠΑΙΤΗΣΗ</strong></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>ST-FLAG</strong></td>
+<td style="width: 15%;">Int</td>
+<td style="width: 50%;">0 = Επιτυχής Εισαγωγή <br>1 έως 99 Error codes</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>ST-TITLE</strong></td>
+<td style="width: 15%;">String</td>
+<td style="width: 50%;">Περιγραφή Λάθους αν ST-FLAG > 0</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td colspan="4" style ="color: green"><strong><br><br>ΕΑΝ ΤΟ ΑΝΤΙΚΕΙΜΕΝΟ ΕΧΕΙ ΠΑΡΑΔΟΘΕΙ ΕΠΙΣΤΡΕΦΕΙ:<br><br></strong></td>
+</tr>
+<tr>
+<td style="width: 15%; color: red"><strong>ΠΕΔΙΟ</strong></td>
+<td style="width: 15%; color: red"><strong>ΤΥΠΟΣ</strong></td>
+<td style="width: 50%; color: red"><strong>ΠΕΡΙΓΡΑΦΗ</strong></td>
+<td style="width: 20%; color: red"><strong>ΑΠΑΙΤΗΣΗ</strong></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>POD_DATE</strong></td>
+<td style="width: 15%;">Char 8 digit</td>
+<td style="width: 50%;">H ημερομηνία με format ΕΕΕΕΜΜΗΗ</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>POD_TIME</strong></td>
+<td style="width: 15%;">Char 4 digit</td>
+<td style="width: 50%;">Η ώρα με format ΩΩΛΛ</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>POD_NAME</strong></td>
+<td style="width: 15%;">String</td>
+<td style="width: 50%;">Όνομα παραλήπτη</td>
+<td style="width: 20%;">length=50</td>
+</tr>
+<tr>
+<td colspan="4" style ="color: green"><strong><br><br>ΓΙΑ ΚAΘΕ ΓΡΑΜMH STATUS (WEB_STATUS) ΕΠΙΣΤΡΕΦΕΙ:<br><br></strong></td>
+</tr>
+<tr>
+<td style="width: 15%; color: red"><strong>ΠΕΔΙΟ</strong></td>
+<td style="width: 15%; color: red"><strong>ΤΥΠΟΣ</strong></td>
+<td style="width: 50%; color: red"><strong>ΠΕΡΙΓΡΑΦΗ</strong></td>
+<td style="width: 20%; color: red"><strong>ΑΠΑΙΤΗΣΗ</strong></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WEB_DATE</strong></td>
+<td style="width: 15%;">Char 8 digit</td>
+<td style="width: 50%;">H ημερομηνία με format ΕΕΕΕΜΜΗΗ</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WEB_TIME</strong></td>
+<td style="width: 15%;">Char 4 digit</td>
+<td style="width: 50%;">Η ώρα με format ΩΩΛΛ</td>
+<td style="width: 20%;"></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WEB_STATION</strong></td>
+<td style="width: 15%;">String</td>
+<td style="width: 50%;">Τίτλος Σταθμού που έκανε την κίνηση</td>
+<td style="width: 20%;">length=30</td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WEB_STATUS_TITLE</strong></td>
+<td style="width: 15%;">String</td>
+<td style="width: 50%;">Περιγραφή του STATUS</td>
+<td style="width: 20%;">length=150</td>
+</tr>
+<tr>
+<td colspan="4" style ="color: green"><strong><br><br>KAI ΣΑΝ ΤΕΛΕΥΤΑΙΑ ΠΛΗΡΟΦΟΡΙΑ ΕΠΙΣΤΡΕΦΕΙ:<br><br></strong></td>
+</tr>
+<tr>
+<td style="width: 15%; color: red"><strong>ΠΕΔΙΟ</strong></td>
+<td style="width: 15%; color: red"><strong>ΤΥΠΟΣ</strong></td>
+<td style="width: 50%; color: red"><strong>ΠΕΡΙΓΡΑΦΗ</strong></td>
+<td style="width: 20%; color: red"><strong>ΑΠΑΙΤΗΣΗ</strong></td>
+</tr>
+<tr>
+<td style="width: 15%;"><strong>WEB_STATUS_COUNTER</strong></td>
+<td style="width: 15%;">Int</td>
+<td style="width: 50%;">Συνολικός Αριθμός Κινήσεων</td>
+<td style="width: 20%;">Clarification: H ταξινόμηση είναι κατά φθίνουσα χρονολογική σειρά,<br> ταξινομώντας πρώτα την ημερομηνία και μετά την ώρα</td>
+</tr>
+</tbody>
+</table>
+<br><br><br>

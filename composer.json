@@ -1,0 +1,29 @@
+{
+    "name": "chinchillabrains/eltaws",
+    "description": "PHP Client for Elta Courier web services.",
+    "keywords": ["Elta", "courier", "client"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ilias Papadopoulos",
+            "email": "chinchillabrains@gmail.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=7.1"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chinchillabrains\\Eltaws": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Chinchillabrains\\Eltaws\\Tests\\": "tests/"
+        }
+    }	
+}
