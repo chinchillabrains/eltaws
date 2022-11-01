@@ -26,25 +26,28 @@ class Client{
 
     public function getStoreByZip( string $zip ): array
     {
-        $service = 'PELTT01.wsdl';
-        $reqData = ['web_tk' => $zip];
+        $service = 'PELSTATION.wsdl';
+        $reqData = [
+            'web_tk' => $zip
+        ];
         return $this->sendRequest( $service, $reqData );
     }
 
-    private function sendRequest( string $service, array $requestData )
+    private function sendRequest( string $service, array $requestData ): array
     {
-        $client = new SoapClient( 
+        $client = new \SoapClient( 
             $this->wsdir . $service,
-            [ 'location' => $this->$serviceLocation ] 
+            [ 'location' => $this->serviceLocation ] 
         );
         try {
-            return $client->READ( $requestData );
-        } catch ( SoapFault $e ) {
+            $res = $client->READ( $requestData );
+        } catch ( \SoapFault $e ) {
             error_log( $e );
-            return [
+            $res = [
                 'error' => $e
             ];
         }
+        return json_decode( json_encode( $res ), true );
     }
 
 }
