@@ -10,7 +10,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "type": "project",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "Chinchillabrains\\Eltaws\\": "src/"
