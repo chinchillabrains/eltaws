@@ -9,6 +9,7 @@
             "email": "chinchillabrains@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "type": "project",
     "autoload": {
         "psr-4": {
