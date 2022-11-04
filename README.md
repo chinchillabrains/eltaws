@@ -1,6 +1,10 @@
 # eltaws
 PHP Client for Elta Courier web services
 
+## Attention
+In order to connect to ELTA server, your firewall is required to have port 9003 open for TCP OUT connections.
+Open port 9003 to IP 212.205.47.226 in your firewall.
+
 ## Installation
 
 Install via Composer:
