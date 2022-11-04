@@ -1,11 +1,27 @@
 <?php namespace Chinchillabrains\Eltaws;
 
+/**
+ * Client class for communicating with Elta web services
+ */
 class Client{
 
+    /**
+     * @var string Service location as supplied by ELTA Courier
+     */
     private $serviceLocation = 'http://212.205.47.226:9003';
     
+    /**
+     * @var string SOAP Web service descriptions directory
+     */
     private $wsdir = __DIR__ . '/ws/';
 
+    /**
+     * Create a new package to send
+     * 
+     * @param array $packageInfo Fields to send to web service
+     * 
+     * @return array Web service response
+     */
     public function sendPackage( array $packageInfo ): array
     {
         $service = 'CREATEAWB.wsdl';
@@ -46,6 +62,13 @@ class Client{
         return $this->sendRequest( $service, $packageInfo );
     }
 
+    /**
+     * Get printable label for a package
+     * 
+     * @param array $packageInfo Fields to send to web service
+     * 
+     * @return array Web service response
+     */
     public function getLabel( array $packageInfo ): array
     {
         $service = 'PELB64VG.wsdl';
@@ -62,6 +85,13 @@ class Client{
         return $this->sendRequest( $service, $packageInfo );
     }
 
+    /**
+     * Get tracking data for a package
+     * 
+     * @param array $packageInfo Fields to send to web service
+     * 
+     * @return array Web service response
+     */
     public function getTrackingData( array $packageInfo ): array
     {
         $service = 'PELTT01.wsdl';
@@ -79,6 +109,13 @@ class Client{
         return $this->sendRequest( $service, $packageInfo );
     }
 
+    /**
+     * Get Elta store that serves the supplied ZIP code
+     * 
+     * @param string $zip Postal code
+     * 
+     * @return array Web service response
+     */
     public function getStoreByZip( string $zip ): array
     {
         $service = 'PELSTATION.wsdl';
@@ -88,6 +125,14 @@ class Client{
         return $this->sendRequest( $service, $reqData );
     }
 
+    /**
+     * Send request to the web service
+     * 
+     * @param string $service Selected Web service 
+     * @param array $requestData Fields to send to web service
+     * 
+     * @return array Web service response
+     */
     private function sendRequest( string $service, array $requestData ): array
     {
         $client = new \SoapClient( 
